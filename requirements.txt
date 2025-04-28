@@ -1,2 +1,5 @@
 openai-whisper
 torch
+whisper
+flask
+ffmpeg-python
