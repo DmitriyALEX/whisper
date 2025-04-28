@@ -1,20 +1,10 @@
 services:
-    - name: node-server
+    - type: web
+      name: node-server
       env: node
-      buildCommand: 'npm install'
-      startCommand: 'npm start'
-      plan: free
-      branches:
-          production:
-              rootDir: .
-
-    - name: python-whisper
-      env: python
       buildCommand: |
+          npm install
           pip install -r requirements.txt
       startCommand: |
-          python3 whisper_worker.py
+          node server.js
       plan: free
-      branches:
-          production:
-              rootDir: .
